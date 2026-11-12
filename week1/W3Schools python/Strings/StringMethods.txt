@@ -1,0 +1,64 @@
+"""
+CÁC PHƯƠNG THỨC (METHOD) CỦA STRING TRONG PYTHON
+
+--- Chuyển đổi chữ hoa / chữ thường ---
+capitalize()   : Viết hoa ký tự đầu tiên của chuỗi
+casefold()     : Chuyển chuỗi về chữ thường (mạnh hơn lower(), dùng để so sánh không phân biệt hoa/thường)
+lower()        : Chuyển chuỗi về chữ thường
+upper()        : Chuyển chuỗi về chữ hoa
+swapcase()     : Đảo hoa thành thường và ngược lại
+title()        : Viết hoa ký tự đầu của mỗi từ
+
+--- Căn lề, độ dài, điền ký tự ---
+center()       : Trả về chuỗi được căn giữa
+ljust()        : Trả về chuỗi căn lề trái
+rjust()        : Trả về chuỗi căn lề phải
+zfill()        : Thêm số 0 vào đầu chuỗi cho đủ độ dài chỉ định
+expandtabs()   : Đặt kích thước của ký tự tab
+
+--- Tìm kiếm và đếm ---
+count()        : Đếm số lần một giá trị xuất hiện trong chuỗi
+find()         : Tìm giá trị, trả về vị trí đầu tiên (không thấy trả về -1)
+rfind()        : Tìm giá trị, trả về vị trí cuối cùng (không thấy trả về -1)
+index()        : Tìm giá trị, trả về vị trí đầu tiên (không thấy báo ValueError)
+rindex()       : Tìm giá trị, trả về vị trí cuối cùng (không thấy báo ValueError)
+startswith()   : True nếu chuỗi bắt đầu bằng giá trị chỉ định
+endswith()     : True nếu chuỗi kết thúc bằng giá trị chỉ định
+
+--- Kiểm tra kiểu nội dung (trả về True/False) ---
+isalnum()      : Tất cả ký tự là chữ hoặc số
+isalpha()      : Tất cả ký tự là chữ cái
+isascii()      : Tất cả ký tự thuộc bảng mã ASCII
+isdecimal()    : Tất cả ký tự là số thập phân
+isdigit()      : Tất cả ký tự là chữ số
+isnumeric()    : Tất cả ký tự là ký tự số
+isidentifier() : Chuỗi là một định danh hợp lệ (tên biến, hàm...)
+islower()      : Tất cả ký tự là chữ thường
+isupper()      : Tất cả ký tự là chữ hoa
+istitle()      : Chuỗi theo quy tắc tiêu đề (mỗi từ viết hoa chữ đầu)
+isprintable()  : Tất cả ký tự đều in ra được
+isspace()      : Tất cả ký tự là khoảng trắng
+
+--- Cắt bỏ khoảng trắng ---
+strip()        : Cắt khoảng trắng (hoặc ký tự chỉ định) ở hai đầu chuỗi
+lstrip()       : Cắt ở đầu (bên trái) chuỗi
+rstrip()       : Cắt ở cuối (bên phải) chuỗi
+
+--- Tách và ghép chuỗi ---
+split()        : Tách chuỗi theo dấu phân cách, trả về list
+rsplit()       : Tách chuỗi theo dấu phân cách, tính từ bên phải, trả về list
+splitlines()   : Tách chuỗi tại các dấu xuống dòng, trả về list
+partition()    : Tách chuỗi thành tuple 3 phần tại lần xuất hiện đầu tiên của giá trị
+rpartition()   : Tách chuỗi thành tuple 3 phần tại lần xuất hiện cuối cùng của giá trị
+join()         : Nối các phần tử của một iterable thành một chuỗi
+
+--- Thay thế và biến đổi ---
+replace()      : Thay một giá trị bằng giá trị khác
+maketrans()    : Tạo bảng ánh xạ ký tự để dùng với translate()
+translate()    : Trả về chuỗi đã được biến đổi theo bảng ánh xạ
+
+--- Định dạng và mã hóa ---
+format()       : Định dạng giá trị trong chuỗi
+format_map()   : Định dạng giá trị trong chuỗi bằng một mapping (ví dụ dict)
+encode()       : Trả về phiên bản đã mã hóa của chuỗi (bytes)
+"""
