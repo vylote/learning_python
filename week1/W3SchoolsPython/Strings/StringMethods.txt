@@ -1,64 +1,93 @@
-"""
-CÁC PHƯƠNG THỨC (METHOD) CỦA STRING TRONG PYTHON
+# ==========================================
+# 1. CHUYỂN ĐỔI CHỮ HOA / CHỮ THƯỜNG
+# ==========================================
+s = "hEllO wORLd"
+print(s.capitalize())  # 'Hello world'  -> Viết hoa chữ cái đầu chuỗi, còn lại thường
+print(s.title())       # 'Hello World'  -> Viết hoa chữ cái đầu mỗi từ
+print(s.upper())       # 'HELLO WORLD'  -> Viết hoa toàn bộ
+print(s.lower())       # 'hello world'  -> Viết thường toàn bộ
+print(s.swapcase())    # 'HeLLo WorlD'  -> Đảo hoa thành thường và ngược lại
+print("Straße".casefold()) # 'strasse'  -> Viết thường triệt để (dùng khi so sánh chuỗi)
 
---- Chuyển đổi chữ hoa / chữ thường ---
-capitalize()   : Viết hoa ký tự đầu tiên của chuỗi
-casefold()     : Chuyển chuỗi về chữ thường (mạnh hơn lower(), dùng để so sánh không phân biệt hoa/thường)
-lower()        : Chuyển chuỗi về chữ thường
-upper()        : Chuyển chuỗi về chữ hoa
-swapcase()     : Đảo hoa thành thường và ngược lại
-title()        : Viết hoa ký tự đầu của mỗi từ
 
---- Căn lề, độ dài, điền ký tự ---
-center()       : Trả về chuỗi được căn giữa
-ljust()        : Trả về chuỗi căn lề trái
-rjust()        : Trả về chuỗi căn lề phải
-zfill()        : Thêm số 0 vào đầu chuỗi cho đủ độ dài chỉ định
-expandtabs()   : Đặt kích thước của ký tự tab
+# ==========================================
+# 2. CĂN LỀ, ĐỘ DÀI, ĐIỀN KÝ TỰ
+# ==========================================
+s = "Py"
+print(s.center(6, "-"))    # '--Py--'     -> Căn giữa, bù ký tự '-' cho đủ 6 chỗ
+print(s.ljust(5, "."))     # 'Py...'      -> Căn trái, bù '.' bên phải
+print(s.rjust(5, "."))     # '...Py'      -> Căn phải, bù '.' bên trái
+print("42".zfill(5))       # '00042'      -> Thêm số 0 ở đầu cho đủ 5 ký tự
+print("A\tB".expandtabs(4))# 'A   B'      -> Đổi tab thành khoảng trắng (mặc định 8)
 
---- Tìm kiếm và đếm ---
-count()        : Đếm số lần một giá trị xuất hiện trong chuỗi
-find()         : Tìm giá trị, trả về vị trí đầu tiên (không thấy trả về -1)
-rfind()        : Tìm giá trị, trả về vị trí cuối cùng (không thấy trả về -1)
-index()        : Tìm giá trị, trả về vị trí đầu tiên (không thấy báo ValueError)
-rindex()       : Tìm giá trị, trả về vị trí cuối cùng (không thấy báo ValueError)
-startswith()   : True nếu chuỗi bắt đầu bằng giá trị chỉ định
-endswith()     : True nếu chuỗi kết thúc bằng giá trị chỉ định
 
---- Kiểm tra kiểu nội dung (trả về True/False) ---
-isalnum()      : Tất cả ký tự là chữ hoặc số
-isalpha()      : Tất cả ký tự là chữ cái
-isascii()      : Tất cả ký tự thuộc bảng mã ASCII
-isdecimal()    : Tất cả ký tự là số thập phân
-isdigit()      : Tất cả ký tự là chữ số
-isnumeric()    : Tất cả ký tự là ký tự số
-isidentifier() : Chuỗi là một định danh hợp lệ (tên biến, hàm...)
-islower()      : Tất cả ký tự là chữ thường
-isupper()      : Tất cả ký tự là chữ hoa
-istitle()      : Chuỗi theo quy tắc tiêu đề (mỗi từ viết hoa chữ đầu)
-isprintable()  : Tất cả ký tự đều in ra được
-isspace()      : Tất cả ký tự là khoảng trắng
+# ==========================================
+# 3. TÌM KIẾM VÀ ĐẾM
+# ==========================================
+s = "banana"
+print(s.count("a"))          # 3          -> Đếm số lần 'a' xuất hiện
+print(s.find("na"))          # 2          -> Vị trí đầu tiên (không thấy trả -1)
+print(s.rfind("na"))         # 4          -> Vị trí cuối cùng (không thấy trả -1)
+print(s.index("na"))         # 2          -> Giống find(), nhưng không thấy báo lỗi ValueError
+print(s.rindex("na"))        # 4          -> Giống rfind(), nhưng không thấy báo lỗi ValueError
+print(s.startswith("ba"))    # True       -> Kiểm tra có bắt đầu bằng 'ba' không
+print(s.endswith("na"))      # True       -> Kiểm tra có kết thúc bằng 'na' không
 
---- Cắt bỏ khoảng trắng ---
-strip()        : Cắt khoảng trắng (hoặc ký tự chỉ định) ở hai đầu chuỗi
-lstrip()       : Cắt ở đầu (bên trái) chuỗi
-rstrip()       : Cắt ở cuối (bên phải) chuỗi
 
---- Tách và ghép chuỗi ---
-split()        : Tách chuỗi theo dấu phân cách, trả về list
-rsplit()       : Tách chuỗi theo dấu phân cách, tính từ bên phải, trả về list
-splitlines()   : Tách chuỗi tại các dấu xuống dòng, trả về list
-partition()    : Tách chuỗi thành tuple 3 phần tại lần xuất hiện đầu tiên của giá trị
-rpartition()   : Tách chuỗi thành tuple 3 phần tại lần xuất hiện cuối cùng của giá trị
-join()         : Nối các phần tử của một iterable thành một chuỗi
+# ==========================================
+# 4. KIỂM TRA KIỂU NỘI DUNG (True / False)
+# ==========================================
+print("User123".isalnum())       # True   -> Chỉ gồm chữ và số (không có dấu cách/ký tự đặc biệt)
+print("Python".isalpha())        # True   -> Chỉ gồm chữ cái
+print("Hello!".isascii())        # True   -> Nằm trong bảng mã ASCII (tiếng Việt có dấu sẽ False)
+print("123".isdecimal())         # True   -> Số thập phân cơ bản (0-9)
+print("²".isdigit())             # True   -> Chữ số (nhận cả số mũ ², nhưng phân số ½ thì False)
+print("½".isnumeric())           # True   -> Ký tự số (nhận cả số mũ ², phân số ½, số La Mã Ⅳ)
+print("var_1".isidentifier())    # True   -> Đặt làm tên biến trong Python hợp lệ (số đầu sẽ False)
+print("abc".islower())           # True   -> Tất cả đều viết thường
+print("ABC".isupper())           # True   -> Tất cả đều viết hoa
+print("Hello World".istitle())   # True   -> Đúng chuẩn viết hoa đầu mỗi từ
+print("Hi\n".isprintable())      # False  -> Có ký tự ẩn '\n' nên không in nguyên vẹn ra 1 dòng được
+print("   \t\n".isspace())       # True   -> Toàn bộ là khoảng trắng (dấu cách, tab, xuống dòng)
 
---- Thay thế và biến đổi ---
-replace()      : Thay một giá trị bằng giá trị khác
-maketrans()    : Tạo bảng ánh xạ ký tự để dùng với translate()
-translate()    : Trả về chuỗi đã được biến đổi theo bảng ánh xạ
 
---- Định dạng và mã hóa ---
-format()       : Định dạng giá trị trong chuỗi
-format_map()   : Định dạng giá trị trong chuỗi bằng một mapping (ví dụ dict)
-encode()       : Trả về phiên bản đã mã hóa của chuỗi (bytes)
-"""
+# ==========================================
+# 5. CẮT BỎ KHOẢNG TRẮNG / KÝ TỰ THỪA
+# ==========================================
+s = "---Hello---"
+print("  hi  ".strip())   # 'hi'          -> Mặc định cắt khoảng trắng 2 đầu
+print(s.strip("-"))       # 'Hello'       -> Cắt dấu '-' ở cả 2 đầu
+print(s.lstrip("-"))      # 'Hello---'    -> Chỉ cắt bên trái (đầu chuỗi)
+print(s.rstrip("-"))      # '---Hello'    -> Chỉ cắt bên phải (cuối chuỗi)
+
+
+# ==========================================
+# 6. TÁCH VÀ GHÉP CHUỖI
+# ==========================================
+print("a,b,c".split(","))          # ['a', 'b', 'c']      -> Tách từ trái sang
+print("a,b,c".rsplit(",", 1))      # ['a,b', 'c']         -> Tách từ phải sang (tối đa 1 lần)
+print("dòng 1\ndòng 2".splitlines()) # ['dòng 1', 'dòng 2'] -> Tách theo dấu xuống dòng
+print("user@gmail.com".partition("@"))  # ('user', '@', 'gmail.com') -> Chia 3 phần tại chỗ gặp đầu tiên
+print("a.b.c".rpartition("."))          # ('a.b', '.', 'c')          -> Chia 3 phần tại chỗ gặp cuối cùng
+print("-".join(["2026", "11", "27"]))   # '2026-11-27'    -> Nối các phần tử bằng dấu '-'
+
+
+# ==========================================
+# 7. THAY THẾ VÀ BIẾN ĐỔI
+# ==========================================
+print("I like Java".replace("Java", "Python"))  # 'I like Python'
+
+# maketrans() + translate(): Thay thế hàng loạt ký tự cùng lúc
+bang_ma = str.maketrans("aeo", "430")           # Quy ước: a->4, e->3, o->0
+print("hello".translate(bang_ma))               # 'h3ll0'
+
+
+# ==========================================
+# 8. ĐỊNH DẠNG VÀ MÃ HÓA
+# ==========================================
+print("Tên: {}, Tuổi: {}".format("An", 20))     # 'Tên: An, Tuổi: 20'
+
+info = {"ten": "Bình", "tuoi": 25}
+print("Tên: {ten}, Tuổi: {tuoi}".format_map(info)) # 'Tên: Bình, Tuổi: 25' (Lấy trực tiếp từ dict)
+
+print("Xin chào".encode("utf-8"))               # b'Xin ch\xc3\xa0o' -> Chuyển str thành bytes

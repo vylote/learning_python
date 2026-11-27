@@ -1,7 +1,7 @@
 #u can return a range of characters by using the slice syntax
 #specify the start index and the end index, separated by a colon, to return a part of the string
 b = "HelloWorld"
-print(b[2:5]) #get characters from position 2 to position 5
+print(b[2:5]) #get characters from position 2 to position 5-1
 
 #slice from the start
 #By leaving out the start index, the range will start at the first character

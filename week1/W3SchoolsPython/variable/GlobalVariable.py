@@ -8,14 +8,22 @@ def myfunc():
 
 myfunc()
 
-#if u create a variable with the same name inside a function, this variable will be local, and can only be used inside the function. The global variable with the same name will remain as it was, global and with the original value.
+print()
+
+# if u create a variable with the same name inside a function, this variable will be local, 
+# and can only be used inside the function. The global variable with the same name will 
+# remain as it was, global and with the original value.
 def myfunc2():
     x = "fantastic"
     print("Python is " + x)
 
 myfunc2()
 
+print()
+
 print("Python is " + x)
+
+print()
 
 #If you use the global keyword, the variable belongs to the global scope:
 def myfunc3():
@@ -24,4 +32,7 @@ def myfunc3():
     print("Python is " + x)
 
 myfunc3()
+
+print()
+
 print("Python is " + x)

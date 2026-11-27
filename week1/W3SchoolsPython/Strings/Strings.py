@@ -23,7 +23,8 @@ print(a)
 
 #Looping through a string
 for x in "banana":
-  print(x)
+  print(x, end=" ")
+print()
 
 #Check String
 #To check if a certain phrase or character is present in a string, we can use the keyword in.

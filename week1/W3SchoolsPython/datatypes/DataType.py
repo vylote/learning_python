@@ -1,7 +1,7 @@
 #python has the following data types built in by default, in these categories:
 #Text Type:	str
 #Numeric Types:	int, float, complex
-#Sequence Types:	list, tuple, range
+#Sequence Types:  list, tuple, range
 #mapping Type:	dict
 #Set Types:	set, frozenset
 #Boolean Type:	bool
@@ -13,15 +13,21 @@ z = 1 + 2j
 print(z)
 print(type(z))
 
+print()
+
 #range
 x = range(6)
 print(x)
 print(list(x))
 
+print()
+
 #dict
 x = {"name" : "John", "age" : 36, "country" : "Norway"}
 print(x)    
 print(type(x))
+
+print()
 
 #dict access, add, remove, update
 x["name"] = "Jane" #update
@@ -33,9 +39,9 @@ print(x)
 # ---------- set ----------
 # set: unordered, unindexed, no duplicate values
 # Stored in a hash table: position = hash(item) % table_size
-# hash of a str depends on a random seed chosen when Python starts
+# hash of a str depends on a random seed choosen when Python starts
 #   -> different seed = different hash = different position = different print order
-# set is mutable -> hash could change -> NOT hashable
+# set is mutable -> hash could change -> NOT hashable (cấm băm set)
 #   -> cannot be a dict key or an element of another set
 
 x = {"apple", "banana", "cherry"}
@@ -45,7 +51,7 @@ print(type(x))
 # ---------- frozenset ----------
 # Same as set: unordered, no duplicates, affected by hash seed
 # Different: immutable -> hash never changes while the program runs -> hashable
-#   - Add/remove items : set -> yes (add, remove, ...) | frozenset -> no (AttributeError)
+#   - Add/remove items : set -> yes (add, remove, ...) | frozenset -> no (AttributeError)(có thể băm frozenset to become a element of set/dicst)
 #   - Hashable         : set -> no                     | frozenset -> yes
 #   - Dict key         : set -> no                     | frozenset -> yes
 #   - Element of a set : set -> no                     | frozenset -> yes
@@ -55,13 +61,17 @@ x = frozenset(["apple", "banana", "cherry"])
 print(x)
 print(type(x))
 
+print()
+
 #bytes
 b = b"apple"
 print(b)           # b'apple'
 print(type(b))     # <class 'bytes'>
-print(b[0])        # 97  (mã ASCII của 'a', ra số nguyên chứ không phải ký tự)
+print(type( b[0]))        # 97  (mã ASCII của 'a', ra số nguyên chứ không phải ký tự)
 print(list(b))     # [97, 112, 112, 108, 101]
 
+
+print()
 
 #bytearray
 # bytearray là bản mutable của bytes: cũng là chuỗi các số nguyên 0-255, có thứ tự, có chỉ số, nhưng sửa được tại chỗ. 
@@ -78,9 +88,13 @@ ba.append(33)            # thêm byte '!'
 ba.extend(b"??")         # thêm nhiều byte
 ba += b"xyz"             # nối thêm
 ba.pop()                 # xóa byte cuối
+print(ba)
+
+print()
 ba[1:3] = b"XY"          # gán theo lát cắt
 print(ba)
 
+print()
 
 #memoryview
 # memoryview là một “cửa sổ nhìn vào bộ nhớ” của đối tượng khác (bytes, bytearray, array...) mà không sao chép dữ liệu. 
